@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  react:
+    image: node:latest
+    command: npm start
+    working_dir: /coffee_fe
+    volumes:
+      - ./ghi/coffee_fe:/coffee_fe
+    environment:
+      HOST_OS: ${OS}
+      NODE_ENV: development
+      HOST: "0.0.0.0"
+    ports:
+      - "3000:3000"
+  coffee_project:
+    build:
+      context: ./coffee_project
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./coffee_project:/app
