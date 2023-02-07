@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react'
 import './App.css';
+import Nav from './Nav';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CreateOrigin from './common/CreateOrigin';
+import DisplayCoffeeCards from './common/CoffeeCards';
 
 function App() {
+
+  const [brewedCoffees, setBrewedCoffees] = useState([])
+
+  const fetchBrewedCoffees = async () => {
+    const url = 'http://localhost:8000/api/brewedcoffees/'
+    const response = await fetch(url)
+
+    if (response.ok) {
+      const data = await response.json()
+      setBrewedCoffees(data.brewed_coffees)
+    }
+  }
+
+  useEffect(() => {
+    fetchBrewedCoffees()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Balls <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <div className="container">
+        <Routes>
+            <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+        </Routes>
+        {/*<CreateOrigin /> */}
+      </div>
+    </BrowserRouter>
+    
   );
 }
 
