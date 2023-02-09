@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CreateOrigin from './common/CreateOrigin';
 import DisplayCoffeeCards from './common/CoffeeCards';
 import CreateBrewedCoffee from './common/CreateBrewedCoffee';
+import Checkbox from './common/Checkbox';
 
 function App() {
 
@@ -14,6 +15,8 @@ function App() {
   const [waterBlends, setWaterBlends] = useState([])
   const [grinders, setGrinders] = useState([])
   const [brewers, setBrewers] = useState([])
+  const [creamers, setCreamers] = useState([])
+  const [sweeteners, setSweeteners] = useState([])
 
 
 
@@ -71,6 +74,25 @@ function App() {
       setBrewers(data.brewers)
     }
   }
+  const fetchCreamers = async () => {
+    const url = 'http://localhost:8000/api/creamers/'
+    const response = await fetch(url)
+
+    if (response.ok) {
+      const data = await response.json()
+      setCreamers(data.creamers)
+    }
+  }
+  const fetchSweeteners = async () => {
+    const url = 'http://localhost:8000/api/sweeteners/'
+    const response = await fetch(url)
+
+    if (response.ok) {
+      const data = await response.json()
+      setSweeteners(data.sweeteners)
+    }
+  }
+
 
 
   useEffect(() => {
@@ -80,6 +102,8 @@ function App() {
     fetchWaterBlends()
     fetchGrinders()
     fetchBrewers()
+    fetchCreamers()
+    fetchSweeteners()
   }, [])
 
   return (
@@ -88,7 +112,7 @@ function App() {
       <div className="container">
         <Routes>
             <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} />} />
-            <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} fetchBrewedCoffees={fetchBrewedCoffees} />} />
         </Routes>
         {/*<CreateOrigin /> */}
       </div>
