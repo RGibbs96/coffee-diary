@@ -94,6 +94,8 @@ class BrewedCoffee(models.Model):
         WaterBlend,
         related_name="water",
         on_delete=models.PROTECT,
+        null=True,
+        blank=True,
     )
     creamer = models.ForeignKey(
         Creamer,
@@ -113,11 +115,15 @@ class BrewedCoffee(models.Model):
         Grinder,
         related_name="grinder",
         on_delete=models.PROTECT,
+        null=True,
+        blank=True,
     )
     brewer = models.ForeignKey(
         Brewer,
         related_name="brewer",
         on_delete=models.PROTECT,
+        null=True,
+        blank=True,
     )
     coffee_dose_g = models.PositiveSmallIntegerField()
     liquid_yield_g = models.PositiveSmallIntegerField()

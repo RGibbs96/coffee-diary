@@ -92,8 +92,62 @@ function CreateBrewedCoffee(props) {
         setSweetener(value)
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        const data = {}
+        data.date_time_brewed = dateTimeBrewed
+        data.method_id = Number(method)
+        data.bean_id = Number(bean)
+        data.water_id = Number(water)
+        data.grinder_id = Number(grinder)
+        data.brewer_id = Number(brewer)
+        data.coffee_dose_g = Number(coffeeDose)
+        data.liquid_yield_g = Number(liquidYield)
+        data.total_brew_time_s = Number(totalBrewTime)
+        data.grind_size = Number(grindSize)
+        data.water_temperature = Number(waterTemperature)
+        data.preinfusion = (preinfusion === "true")
+        if (preinfusionTime == ""){
+            data.preinfusion_time_s = null
+        } else {
+            data.preinfusion_time_s = Number(preinfusionTime)
+        }
+        data.pressure_bar = Number(pressureBar)
+        data.bloom = (bloom === "true")
+        if (creamer == ""){
+            data.creamer = null
+        } else {
+            data.creamer = Number(creamer)
+        }
+        if (sweetener == ""){
+            data.sweetener = null
+        } else {
+            data.sweetener = Number(sweetener)
+        }
+        console.log(data)
+        const url = "http://localhost:8000/api/brewedcoffees/"
+        const fetchConfig = {
+            method: "post",
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const response = await fetch(url, fetchConfig)
+        if (response.ok) {
+            setDateTimeBrewed("")
+            setCoffeeDose("")
+            setLiquidYield("")
+            setTotalBrewTime("")
+            setGrindSize("")
+            setPreinfusion("")
+            setBloom("")
+            setCreamer("")
+            setSweetener("")
+            props.fetchBrewedCoffees()
+        }
+
+
     }
 
     return (
@@ -184,7 +238,7 @@ function CreateBrewedCoffee(props) {
                             <label>Grind Setting</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input value={waterTemperature} onChange={handleWaterTemperatureChange} required type="number" name="water-temp" id="water-temp" className="form-control" />
+                            <input value={waterTemperature} onChange={handleWaterTemperatureChange} type="number" name="water-temp" id="water-temp" className="form-control" />
                             <label>Water Temperature, C</label>
                         </div>
                         <div className="mb-3">
@@ -201,7 +255,7 @@ function CreateBrewedCoffee(props) {
                             </select>
                         </div>
                         <div className="form-floating mb-3">
-                            <input value={preinfusionTime} onChange={handlePreinfusionTimeChange} required type="number" name="preinfusion-time" id="preinfusion-time" className="form-control" />
+                            <input value={preinfusionTime} onChange={handlePreinfusionTimeChange} type="number" name="preinfusion-time" id="preinfusion-time" className="form-control" />
                             <label>Preinfusion Time, seconds</label>
                         </div>
                         <div className="form-floating mb-3">
@@ -222,8 +276,9 @@ function CreateBrewedCoffee(props) {
                             </select>
                         </div>
                         <div className="mb-3">
-                            <select value={creamer} onChange={handleCreamerChange} required name="creamer" id="creamer" className="form-select">
-                                <option value="">Creamer</option>
+                            Creamer
+                            <select value={creamer} onChange={handleCreamerChange} name="creamer" id="creamer" className="form-select">
+                                <option value="">No Creamer</option>
                                 {props.creamers.map(creamer=> {
                                     return (
                                         <option value={creamer.id} key={creamer.id}>
@@ -234,8 +289,9 @@ function CreateBrewedCoffee(props) {
                             </select>
                         </div>
                         <div className="mb-3">
-                            <select value={sweetener} onChange={handleSweetenerChange} required name="sweetener" id="sweetener" className="form-select">
-                                <option value="">Sweetener</option>
+                            Sweetener
+                            <select value={sweetener} onChange={handleSweetenerChange} name="sweetener" id="sweetener" className="form-select">
+                                <option value="">No Sweetener</option>
                                 {props.sweeteners.map(sweetener=> {
                                     return (
                                         <option value={sweetener.id} key={sweetener.id}>
