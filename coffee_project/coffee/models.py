@@ -134,3 +134,63 @@ class BrewedCoffee(models.Model):
     preinfusion_time_s = models.SmallIntegerField(null=True,blank=True)
     pressure_bar = models.SmallIntegerField(null=True,blank=True)
     bloom = models.BooleanField(default=False)
+    bitterness = models.IntegerField(
+        validators = [
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
+        null=True,
+        blank=True,
+    )
+    acidity = models.IntegerField(
+        validators = [
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
+        null=True,
+        blank=True,
+    )
+    brightness = models.IntegerField(
+        validators = [
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
+        null=True,
+        blank=True,
+    )
+    sweetness = models.IntegerField(
+        validators = [
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
+        null=True,
+        blank=True,
+    )
+    body = models.IntegerField(
+        validators = [
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
+        null=True,
+        blank=True,
+    )
+    clarity = models.IntegerField(
+        validators = [
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ],
+        null=True,
+        blank=True,
+    )
+    rating = models.FloatField(
+        validators = [
+            MaxValueValidator(10.00),
+            MinValueValidator(1.0)
+        ],
+        null=True,
+        blank=True,
+    )
+    general_notes = models.TextField(
+        null=True,
+        blank=True,
+    )

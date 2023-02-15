@@ -115,6 +115,15 @@ class BrewedCoffeeEncoder(ModelEncoder):
         "preinfusion_time_s",
         "pressure_bar",
         "bloom",
+        "bitterness",
+        "acidity",
+        "brightness",
+        "sweetness",
+        "body",
+        "clarity",
+        "rating",
+        "general_notes",
+
     ]
     encoders = {
         "method": BrewMethodEncoder(),

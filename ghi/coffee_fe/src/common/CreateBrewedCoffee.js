@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Checkbox from './Checkbox'
+import Slider from '@mui/material/Slider'
 
 function CreateBrewedCoffee(props) {
     const [dateTimeBrewed, setDateTimeBrewed] = useState("")
@@ -19,6 +20,14 @@ function CreateBrewedCoffee(props) {
     const [bloom, setBloom] = useState("")
     const [creamer, setCreamer] = useState("")
     const [sweetener, setSweetener] = useState("")
+    const [bitterness, setBitterness] = useState(5)
+    const [acidity, setAcidity] = useState(5)
+    const [brightness, setBrightness] = useState(5)
+    const [sweetness, setSweetness] = useState(5)
+    const [body, setBody] = useState(5)
+    const [clarity, setClarity] = useState(5)
+    const [rating, setRating] = useState(5)
+    const [generalNotes, setGeneralNotes] = useState("")
 
     const preinfusion_choices = [{"value": false,"string":"No"},{"value": true,"string":"Yes"}]
     const bloom_choices = [{"value": false,"string":"No"},{"value": true,"string":"Yes"}]
@@ -90,6 +99,39 @@ function CreateBrewedCoffee(props) {
     const handleSweetenerChange = (event) => {
         const value = event.target.value
         setSweetener(value)
+    }
+    const handleBitternessChange = (event) => {
+        const value = event.target.value
+        setBitterness(value)
+    }
+    const handleAcidityChange = (event) => {
+        const value = event.target.value
+        setAcidity(value)
+    }
+    const handleBrightnessChange = (event) => {
+        const value = event.target.value
+        setBrightness(value)
+    }
+    const handleSweetnessChange = (event) => {
+        const value = event.target.value
+        setSweetness(value)
+    }
+    const handleBodyChange = (event) => {
+        const value = event.target.value
+        setBody(value)
+    }
+    const handleClarityChange = (event) => {
+        const value = event.target.value
+        setClarity(value)
+    }
+    const handleRatingChange = (event) => {
+        const value = event.target.value
+        setRating(value)
+    }
+    const handleGeneralNotesChange = (event) => {
+        const value = event.target.value
+        setGeneralNotes(value)
+        console.log(generalNotes)
     }
 
     const handleSubmit = async (event) => {
@@ -300,6 +342,52 @@ function CreateBrewedCoffee(props) {
                                     )
                                 })}
                             </select>
+                        </div>
+                        <div className="mb-3">
+                        Bitterness
+                        <Slider
+                            aria-label="bitterness" defaultValue={5} value={bitterness} onChange={handleBitternessChange}
+                            valueLabelDisplay="auto" step={1} marks min={1} max={10} />
+                        </div>
+                        <div className="mb-3">
+                        Acidity
+                        <Slider
+                            aria-label="acidity" defaultValue={5} value={acidity} onChange={handleAcidityChange}
+                            valueLabelDisplay="auto" step={1} marks min={1} max={10} />
+                        </div>
+                        <div className="mb-3">
+                        Brightness
+                        <Slider
+                            aria-label="brightness" defaultValue={5} value={brightness} onChange={handleBrightnessChange}
+                            valueLabelDisplay="auto" step={1} marks min={1} max={10} />
+                        </div>
+                        <div className="mb-3">
+                        Sweetness
+                        <Slider
+                            aria-label="sweetness" defaultValue={5} value={sweetness} onChange={handleSweetnessChange}
+                            valueLabelDisplay="auto" step={1} marks min={1} max={10} />
+                        </div>
+                        <div className="mb-3">
+                        Body
+                        <Slider
+                            aria-label="body" defaultValue={5} value={body} onChange={handleBodyChange}
+                            valueLabelDisplay="auto" step={1} marks min={1} max={10} />
+                        </div>
+                        <div className="mb-3">
+                        Clarity
+                        <Slider
+                            aria-label="clarity" defaultValue={5} value={clarity} onChange={handleClarityChange}
+                            valueLabelDisplay="auto" step={1} marks min={1} max={10} />
+                        </div>
+                        <div className="mb-3">
+                        Overall Rating
+                        <Slider
+                            aria-label="body" defaultValue={5} value={rating} onChange={handleRatingChange}
+                            valueLabelDisplay="auto" step={0.1} min={1.0} max={10.0} />
+                        </div>
+                        <div className="form-floating mb-3">
+                        General Notes:
+                            <textarea className="form-control" rows="5" id="general-notes" onChange={handleGeneralNotesChange}></textarea>
                         </div>
 
                         <button className="btn btn-primary">Create</button>
