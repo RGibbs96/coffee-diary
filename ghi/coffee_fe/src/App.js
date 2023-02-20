@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CreateOrigin from './common/CreateOrigin';
 import DisplayCoffeeCards from './common/CoffeeCards';
 import CreateBrewedCoffee from './common/CreateBrewedCoffee';
-import Checkbox from './common/Checkbox';
 
 function App() {
 
@@ -17,6 +16,7 @@ function App() {
   const [brewers, setBrewers] = useState([])
   const [creamers, setCreamers] = useState([])
   const [sweeteners, setSweeteners] = useState([])
+  const [brewedCoffeeProps, setBrewedCoffeeProps] = useState({})
 
 
 
@@ -111,8 +111,8 @@ function App() {
       <Nav />
       <div className="container">
         <Routes>
-            <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} />} />
-            <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
         </Routes>
         {/*<CreateOrigin /> */}
       </div>

@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import Checkbox from './Checkbox'
 import Slider from '@mui/material/Slider'
 import Button from 'react-bootstrap/Button'
+import { FullScreenOverlayDemo, PopupOverlayDemo } from './testoverlay'
+import ReactBsOverlay from '../components/reactbsoverlay'
 
 function CreateBrewedCoffee(props) {
+    const [popupOpen, setPopupOpen] = useState(false);
+
     const [dateTimeBrewed, setDateTimeBrewed] = useState("")
     const [method, setMethod] = useState("")
     const [bean, setBean] = useState("")
@@ -163,24 +166,23 @@ function CreateBrewedCoffee(props) {
         data.rating = rating
         data.general_notes = generalNotes
 
-        if (preinfusionTime == ""){
+        if (preinfusionTime === ""){
             data.preinfusion_time_s = null
         } else {
             data.preinfusion_time_s = Number(preinfusionTime)
         }
         data.pressure_bar = Number(pressureBar)
         data.bloom = (bloom === "true")
-        if (creamer == ""){
+        if (creamer === ""){
             data.creamer = null
         } else {
             data.creamer = Number(creamer)
         }
-        if (sweetener == ""){
+        if (sweetener === ""){
             data.sweetener = null
         } else {
             data.sweetener = Number(sweetener)
         }
-        console.log(data)
 
         const url = "http://localhost:8000/api/brewedcoffees/"
         const fetchConfig = {
@@ -211,8 +213,7 @@ function CreateBrewedCoffee(props) {
         <div className="my-5 container">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
-                    <h1>Add a coffee</h1>
-                    <Button className="mb-3" onClick={console.log("hi")}>Load previous coffee</Button>
+                    <Button className="mb-3" onClick={handleClick}>Load previous coffee</Button>
                     <form onSubmit={handleSubmit} id="create-brewed-coffee">
                         <div className="form-floating mb-3">
                             <input value={dateTimeBrewed} onChange={handleDateTimeChange} required type="datetime-local" name="datetime" id="datetime" className="form-control" />
