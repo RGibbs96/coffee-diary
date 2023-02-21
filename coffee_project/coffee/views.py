@@ -13,6 +13,7 @@ from .models import (
     Creamer,
     Sweetener,
     BrewedCoffee,
+    User,
     )
 from .encoders import (
     OriginEncoder,
@@ -24,6 +25,7 @@ from .encoders import (
     BrewerEncoder,
     CreamerEncoder,
     SweetenerEncoder,
+    UserEncoder,
     BrewedCoffeeEncoder,
 )
 

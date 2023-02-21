@@ -1,6 +1,6 @@
 from .common.json import ModelEncoder
 
-from .models import CoffeeBean, WaterBlend, BrewMethod, Grinder, Brewer, Creamer, Sweetener, BrewedCoffee, Origin, Roaster
+from .models import CoffeeBean, WaterBlend, BrewMethod, Grinder, Brewer, Creamer, Sweetener, BrewedCoffee, Origin, Roaster, User
 
 class OriginEncoder(ModelEncoder):
     model = Origin
@@ -94,6 +94,16 @@ class SweetenerEncoder(ModelEncoder):
         "name",
     ]
 
+class UserEncoder(ModelEncoder):
+    model = User
+    properties = [
+        "id",
+        "username",
+        "email",
+        "is_verified",
+        "is_active",
+    ]
+
 class BrewedCoffeeEncoder(ModelEncoder):
     model = BrewedCoffee
     properties = [
@@ -133,4 +143,5 @@ class BrewedCoffeeEncoder(ModelEncoder):
         "sweetener": SweetenerEncoder(),
         "grinder": GrinderEncoder(),
         "brewer": BrewerEncoder(),
+        "user": UserEncoder(),
     }

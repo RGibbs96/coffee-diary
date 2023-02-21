@@ -1,8 +1,12 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+import sys
+sys.path.append("..")
+from accounts.models import User
 
 class Origin(models.Model):
     name = models.CharField(max_length=100)
+
 
 class Roaster(models.Model):
     name = models.CharField(max_length=100)
@@ -122,6 +126,13 @@ class BrewedCoffee(models.Model):
         Brewer,
         related_name="brewer",
         on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+    )
+    user = models.ForeignKey(
+        User,
+        related_name="user",
+        on_delete=models.CASCADE,
         null=True,
         blank=True,
     )

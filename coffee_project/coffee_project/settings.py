@@ -28,10 +28,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#override basic User model with a custom User Model
+AUTH_USER_MODEL = "accounts.User"
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    "djwto",
+    "accounts.apps.AccountsConfig",
     "coffee.apps.CoffeeConfig",
     "django.contrib.admin",
     "django.contrib.auth",
