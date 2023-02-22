@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CreateOrigin from './common/CreateOrigin';
+import LoginUser from './common/Login';
 import DisplayCoffeeCards from './common/CoffeeCards';
 import CreateBrewedCoffee from './common/CreateBrewedCoffee';
 
@@ -113,6 +114,7 @@ function App() {
         <Routes>
             <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
             <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/login/" element={<LoginUser/>}/>
         </Routes>
         {/*<CreateOrigin /> */}
       </div>

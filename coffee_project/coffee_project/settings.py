@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import dj_database_url
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,15 +33,21 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = "accounts.User"
 
 
+DJWTO_SIGNING_KEY = os.environ['DJWTO_SIGNING_KEY']
+DJWTO_MODE = 'TWO-COOKIES'
+DJWTO_ACCESS_TOKEN_LIFETIME = None
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
-    "djwto",
     "accounts.apps.AccountsConfig",
     "coffee.apps.CoffeeConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
+    "djwto",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
@@ -62,6 +69,7 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
+    "https://127.0.0.1",
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -115,7 +123,15 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
-
+'''
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.ScryptPasswordHasher',
+]
+'''
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

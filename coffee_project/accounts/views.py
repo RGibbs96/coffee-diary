@@ -5,14 +5,10 @@ import json
 from .models import User
 from .encoders import UserEncoder
 
-from argon2 import PasswordHasher
-
 def user_signup(request):
     if request.method == "POST":
         content = json.loads(request.body)
-        ph = PasswordHasher()
-        hashedPassword = ph.hash(content["password"])
-        content["password"] = hashedPassword
+
         content["is_verified"] = False
         content["is_active"] = True
         try:
