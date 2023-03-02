@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CreateOrigin from './common/CreateOrigin';
 import DisplayCoffeeCards from './common/CoffeeCards';
 import CreateBrewedCoffee from './common/CreateBrewedCoffee';
+import CreateBean from './common/CreateNewBean';
 
 function App() {
 
@@ -113,6 +114,7 @@ function App() {
         <Routes>
             <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
             <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/newbean" element={<CreateBean />} />
         </Routes>
         {/*<CreateOrigin /> */}
       </div>
