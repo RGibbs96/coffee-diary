@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import './App.css';
 import Nav from './Nav';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateOrigin from './common/CreateOrigin';
 import DisplayCoffeeCards from './common/CoffeeCards';
 import CreateBrewedCoffee from './common/CreateBrewedCoffee';
 import CreateBean from './common/CreateNewBean';
+import CreateRoaster from './common/CreateRoaster';
+import IconSidebar from './components/IconSidebar';
+import CreateBrewer from './common/CreateBrewer';
 
 function App() {
 
@@ -17,8 +22,8 @@ function App() {
   const [brewers, setBrewers] = useState([])
   const [creamers, setCreamers] = useState([])
   const [sweeteners, setSweeteners] = useState([])
-  const [brewedCoffeeProps, setBrewedCoffeeProps] = useState({})
-
+  const [roasters, setRoasters] = useState([])
+  const [origins, setOrigins] = useState([])
 
 
   const fetchBrewedCoffees = async () => {
@@ -93,6 +98,24 @@ function App() {
       setSweeteners(data.sweeteners)
     }
   }
+  const fetchRoasters = async () => {
+    const url = 'http://localhost:8000/api/roasters/'
+    const response = await fetch(url)
+
+    if (response.ok) {
+      const data = await response.json()
+      setRoasters(data.roasters)
+    }
+  }
+  const fetchOrigins = async () => {
+    const url = 'http://localhost:8000/api/origins/'
+    const response = await fetch(url)
+
+    if (response.ok) {
+      const data = await response.json()
+      setOrigins(data.origins)
+    }
+  }
 
 
 
@@ -105,6 +128,8 @@ function App() {
     fetchBrewers()
     fetchCreamers()
     fetchSweeteners()
+    fetchRoasters()
+    fetchOrigins()
   }, [])
 
   return (
@@ -112,11 +137,13 @@ function App() {
       <Nav />
       <div className="container">
         <Routes>
-            <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
-            <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
-            <Route path="/newbean" element={<CreateBean />} />
+            <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/coffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+            <Route path="/beans/new" element={<CreateBean roasters={roasters} origins={origins} fetchBeans={fetchBeans} />} />
+            <Route path="/brewers/new" element={<CreateBrewer />} />
+            <Route path="/origins/new" element={<CreateOrigin fetchOrigins={fetchOrigins}/>} />
+            <Route path="/roasters/new" element={<CreateRoaster fetchRoasters={fetchRoasters} />} />
         </Routes>
-        {/*<CreateOrigin /> */}
       </div>
     </BrowserRouter>
 

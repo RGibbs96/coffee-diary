@@ -1,11 +1,8 @@
 import { useState } from 'react'
 import Slider from '@mui/material/Slider'
 import Button from 'react-bootstrap/Button'
-import { FullScreenOverlayDemo, PopupOverlayDemo } from './testoverlay'
-import ReactBsOverlay from '../components/reactbsoverlay'
 
 function CreateBrewedCoffee(props) {
-    const [popupOpen, setPopupOpen] = useState(false);
 
     const [dateTimeBrewed, setDateTimeBrewed] = useState("")
     const [method, setMethod] = useState("")

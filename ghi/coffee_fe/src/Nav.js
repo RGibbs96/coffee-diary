@@ -8,7 +8,7 @@ function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-success">
           <div className="container-fluid">
-            <NavLink className="navbar-brand" to="/">CoffeeCoffee</NavLink>
+            <NavLink className="navbar-brand" to="/">Coffee Diary</NavLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -17,18 +17,43 @@ function Nav() {
                 <li>
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                      Service
+                      Beans
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <NavLink className="nav-link" to="/technicians/" style={{color:'black'}}>Technician Team</NavLink>
-                      <NavLink className="nav-link" to="/technicians/new" style={{color:'black'}}>Create a Technician</NavLink>
-                      <NavLink className="nav-link" to="/appointments/" style={{color:'black'}}>Service Appointments</NavLink>
-                      <NavLink className="nav-link" to="/appointments/new" style={{color:'black'}}>Create Appointment</NavLink>
-                      <NavLink className="nav-link" to="/appointments/history/" style={{color:'black'}}>Service History</NavLink>
+                      <NavLink className="nav-link" to="/beans/new" style={{color:'black'}}>Add a bean</NavLink>
                     </Dropdown.Menu>
                   </Dropdown>
                 </li>
-            
+                <li>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      Brewers
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <NavLink className="nav-link" to="/brewers/new" style={{color:'black'}}>Add a brewer</NavLink>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+                <li>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      Origins
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <NavLink className="nav-link" to="/origins/new" style={{color:'black'}}>Add an origin</NavLink>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+                <li>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      Roasters
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <NavLink className="nav-link" to="/roasters/new" style={{color:'black'}}>Add a roaster</NavLink>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
               </ul>
             </div>
           </div>
