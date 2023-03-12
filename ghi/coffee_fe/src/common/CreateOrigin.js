@@ -19,7 +19,7 @@ function CreateOrigin(props) {
         const response = await fetch(url, fetchConfig)
         if (response.ok) {
             setOrigin("")
-            props.fetchOrigin()
+            props.fetchOrigins()
         }
     }
 

@@ -1,12 +1,9 @@
 import Card from 'react-bootstrap/Card'
-import { useState } from 'react'
-import { Accordion, Button } from 'react-bootstrap'
-import { FullScreenOverlayDemo ,PopupOverlayDemo } from './testoverlay'
 import ReactBsOverlay from '../components/reactbsoverlay'
+import IconSidebar from '../components/IconSidebar'
+import { Sidebar } from 'react-pro-sidebar'
 
 function DisplayCoffeeCards(props) {
-    const [popupOpen, setPopupOpen] = useState(false);
-    const [fullscreenOpen, setFullscreenOpen] = useState(false);
 
     const allCoffees = props.brewedCoffees
     const dateGroupedCoffees = {}
@@ -39,8 +36,6 @@ function DisplayCoffeeCards(props) {
                     )
                 })}
             </div>
-            <FullScreenOverlayDemo open={fullscreenOpen} onClose={() => setFullscreenOpen(false)} />
-            <PopupOverlayDemo open={popupOpen} onClose={() => setPopupOpen(false)} />
         </div>
     )
 }
