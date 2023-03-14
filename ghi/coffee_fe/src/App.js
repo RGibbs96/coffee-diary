@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import './App.css';
 import Nav from './Nav';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateOrigin from './common/CreateOrigin';
 import DisplayCoffeeCards from './common/CoffeeCards';
 import CreateBrewedCoffee from './common/CreateBrewedCoffee';
 import CreateBean from './common/CreateNewBean';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
 
@@ -108,18 +109,19 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
-      <Nav />
-      <div className="container">
-        <Routes>
-            <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
-            <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
-            <Route path="/newbean" element={<CreateBean />} />
-        </Routes>
-        {/*<CreateOrigin /> */}
-      </div>
-    </BrowserRouter>
-
+    <GoogleOAuthProvider clientId="819294710629-ouanbg5vrbbc61dqf9rh8g39kfkl2946.apps.googleusercontent.com">
+      <BrowserRouter>
+        <Nav />
+        <div className="container">
+          <Routes>
+              <Route path="/" element={<DisplayCoffeeCards brewedCoffees={brewedCoffees} methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+              <Route path="/addnewbrewedcoffee/" element={<CreateBrewedCoffee methods={methods} beans={beans} waterBlends={waterBlends} grinders={grinders} brewers={brewers} sweeteners={sweeteners} creamers={creamers} brewedCoffeeProps={brewedCoffeeProps} fetchBrewedCoffees={fetchBrewedCoffees} />} />
+              <Route path="/newbean" element={<CreateBean />} />
+          </Routes>
+          {/*<CreateOrigin /> */}
+        </div>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 

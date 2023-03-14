@@ -3,8 +3,18 @@ import { useState } from 'react'
 import { Accordion, Button } from 'react-bootstrap'
 import { FullScreenOverlayDemo ,PopupOverlayDemo } from './testoverlay'
 import ReactBsOverlay from '../components/reactbsoverlay'
+import { GoogleLogin } from "@react-oauth/google";
+import { useGoogleLogin } from '@react-oauth/google';
+
+
 
 function DisplayCoffeeCards(props) {
+
+    const login = useGoogleLogin({
+        onSuccess: codeResponse => console.log(codeResponse),
+        flow: 'auth-code',
+      });
+
     const [popupOpen, setPopupOpen] = useState(false);
     const [fullscreenOpen, setFullscreenOpen] = useState(false);
 
@@ -20,6 +30,19 @@ function DisplayCoffeeCards(props) {
 
     return (
         <div className="my-5 container">
+            Google Login
+            <GoogleLogin
+                onSuccess={credentialResponse => {
+                    console.log(credentialResponse)
+                }}
+                onError={() => {
+                    console.log('Login failed')
+                }}
+            />;
+            useGoogleLogin :O
+            <Button onClick={() => login()}>
+                Sign in with Google 🚀{' '}
+            </Button>;
             <div className='mb-3'>
                 <ReactBsOverlay props={props} />
             </div>
