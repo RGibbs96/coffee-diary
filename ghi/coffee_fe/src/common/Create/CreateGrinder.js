@@ -1,16 +1,23 @@
 import { useState } from 'react'
 
-function CreateBrewer(props) {
+function CreateGrinder(props) {
 
     const [make, setMake] = useState("")
     const [model, setModel] = useState("")
+    const [burrs, setBurrs] = useState("")
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         const data = {}
         data.make = make
         data.model = model
-        const url = 'http://localhost:8000/api/brewers/'
+        if (burrs === "") {
+            data.burrs = "stock"
+        } else {
+            data.burrs = burrs
+        }
+        data.user_id = localStorage.getItem('user_id')
+        const url = 'http://localhost:8000/api/grinders/'
         const fetchConfig = {
             method: "post",
             body: JSON.stringify(data),
@@ -22,7 +29,8 @@ function CreateBrewer(props) {
         if (response.ok) {
             setMake("")
             setModel("")
-            props.fetchModels()
+            setBurrs("")
+            props.fetchGrinders()
         }
     }
 
@@ -34,13 +42,17 @@ function CreateBrewer(props) {
         const value = event.target.value
         setModel(value)
     }
+    const handleBurrChange = (event) => {
+        const value = event.target.value
+        setBurrs(value)
+    }
 
     return (
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
-                    <h1>Create a new brewer</h1>
-                    <form onSubmit={handleSubmit} id="create-brewer">
+                    <h1>Create a new grinder</h1>
+                    <form onSubmit={handleSubmit} id="create-grinder">
                         <div className="form-floating mb-3">
                             <input value={make} onChange={handleMakeChange} required type="text" name="make" id="make" className="form-control" />
                             <label>Make</label>
@@ -48,6 +60,10 @@ function CreateBrewer(props) {
                         <div className="form-floating mb-3">
                             <input value={model} onChange={handleModelChange} required type="text" name="model" id="model" className="form-control" />
                             <label>Model</label>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input value={burrs} onChange={handleBurrChange} type="text" name="burrs" id="burrs" className="form-control" />
+                            <label>Burr Set (optional)</label>
                         </div>
                         <button className="btn btn-primary">Create</button>
                     </form>
@@ -59,4 +75,4 @@ function CreateBrewer(props) {
 
 }
 
-export default CreateBrewer
+export default CreateGrinder

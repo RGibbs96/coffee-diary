@@ -1,12 +1,12 @@
 import Card from 'react-bootstrap/Card'
 import ReactBsOverlay from '../components/reactbsoverlay'
-import IconSidebar from '../components/IconSidebar'
-import { Sidebar } from 'react-pro-sidebar'
+
 
 function DisplayCoffeeCards(props) {
 
     const allCoffees = props.brewedCoffees
     const dateGroupedCoffees = {}
+
     for (let coffee of allCoffees){
         if (coffee.date_time_brewed.substring(0,10) in dateGroupedCoffees){
             dateGroupedCoffees[coffee.date_time_brewed.substring(0,10)].push(coffee)
@@ -14,6 +14,7 @@ function DisplayCoffeeCards(props) {
             dateGroupedCoffees[coffee.date_time_brewed.substring(0,10)] = [coffee]
         }
     }
+
 
     return (
         <div className="my-5 container">
