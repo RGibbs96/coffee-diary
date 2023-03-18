@@ -1,6 +1,7 @@
 from .common.json import ModelEncoder
 
 from .models import CoffeeBean, WaterBlend, BrewMethod, Grinder, Brewer, Creamer, Sweetener, BrewedCoffee, Origin, Roaster
+from accounts.encoders import CustomUserEncoder
 
 class OriginEncoder(ModelEncoder):
     model = Origin
@@ -54,7 +55,11 @@ class WaterBlendEncoder(ModelEncoder):
         "water_quantity_g",
         "baking_soda_quantity_g",
         "epsom_salt_quantity_g",
+        "user",
     ]
+    encoders = {
+        "user": CustomUserEncoder(),
+    }
 
 class BrewMethodEncoder(ModelEncoder):
     model = BrewMethod
@@ -70,7 +75,11 @@ class GrinderEncoder(ModelEncoder):
         "make",
         "model",
         "burrs",
+        "user",
     ]
+    encoders = {
+        "user": CustomUserEncoder(),
+    }
 
 class BrewerEncoder(ModelEncoder):
     model = Brewer
@@ -78,7 +87,11 @@ class BrewerEncoder(ModelEncoder):
         "id",
         "make",
         "model",
+        "user",
     ]
+    encoders = {
+        "user": CustomUserEncoder(),
+    }
 
 class CreamerEncoder(ModelEncoder):
     model = Creamer
@@ -99,6 +112,7 @@ class BrewedCoffeeEncoder(ModelEncoder):
     properties = [
         "id",
         "date_time_brewed",
+        "user",
         "method",
         "bean",
         "water",
@@ -126,6 +140,7 @@ class BrewedCoffeeEncoder(ModelEncoder):
 
     ]
     encoders = {
+        "user": CustomUserEncoder(),
         "method": BrewMethodEncoder(),
         "bean": CoffeeBeanEncoder(),
         "water": WaterBlendEncoder(),

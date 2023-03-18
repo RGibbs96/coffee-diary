@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
+from accounts.models import CustomUser
 
 from .models import (
     Origin,
@@ -119,6 +120,9 @@ def api_water_blends(request):
     else:
         try:
             content = json.loads(request.body)
+            user = CustomUser.objects.get(id=content["user_id"])
+            content["user"] = user
+            del content["user_id"]
             water_blend = WaterBlend.objects.create(**content)
             return JsonResponse(
                 {"water_blend":water_blend},
@@ -131,6 +135,16 @@ def api_water_blends(request):
             )
             response.status_code = 400
             return response
+
+@require_http_methods(["GET"])
+def api_waterblends_by_user(request, pk):
+    if request.method == "GET":
+        user = CustomUser.objects.get(id=pk)
+        water_blends = user.waterblend.all()
+        return JsonResponse(
+                {"water_blends":water_blends},
+                encoder=WaterBlendEncoder,
+            )
 
 @require_http_methods(["GET","POST"])
 def api_brew_methods(request):
@@ -167,6 +181,9 @@ def api_grinders(request):
     else:
         try:
             content = json.loads(request.body)
+            user = CustomUser.objects.get(id=content["user_id"])
+            content["user"] = user
+            del content["user_id"]
             grinder = Grinder.objects.create(**content)
             return JsonResponse(
                 {"grinder":grinder},
@@ -179,6 +196,15 @@ def api_grinders(request):
             )
             response.status_code = 400
             return response
+@require_http_methods(["GET"])
+def api_grinders_by_user(request, pk):
+    if request.method == "GET":
+        user = CustomUser.objects.get(id=pk)
+        grinders = user.grinder.all()
+        return JsonResponse(
+                {"grinders":grinders},
+                encoder=GrinderEncoder,
+            )
 
 @require_http_methods(["GET","POST"])
 def api_brewers(request):
@@ -191,6 +217,9 @@ def api_brewers(request):
     else:
         try:
             content = json.loads(request.body)
+            user = CustomUser.objects.get(id=content["user_id"])
+            content["user"] = user
+            del content["user_id"]
             brewer = Brewer.objects.create(**content)
             return JsonResponse(
                 {"brewer":brewer},
@@ -203,6 +232,16 @@ def api_brewers(request):
             )
             response.status_code = 400
             return response
+
+@require_http_methods(["GET"])
+def api_brewers_by_user(request, pk):
+    if request.method == "GET":
+        user = CustomUser.objects.get(id=pk)
+        brewers = user.brewer.all()
+        return JsonResponse(
+                {"brewers":brewers},
+                encoder=BrewerEncoder,
+            )
 
 @require_http_methods(["GET","POST"])
 def api_creamers(request):
@@ -263,16 +302,20 @@ def api_brewed_coffees(request):
     else:
         try:
             content = json.loads(request.body)
+            user = CustomUser.objects.get(id=content["user_id"])
+            print(user)
             method = BrewMethod.objects.get(id=content["method_id"])
             bean = CoffeeBean.objects.get(id=content["bean_id"])
             water = WaterBlend.objects.get(id=content["water_id"])
             grinder = Grinder.objects.get(id=content["grinder_id"])
             brewer = Brewer.objects.get(id=content["brewer_id"])
+            content["user"] = user
             content["method"] = method
             content["bean"] = bean
             content["water"] = water
             content["grinder"] = grinder
             content["brewer"] = brewer
+            del content["user_id"]
             del content["method_id"]
             del content["bean_id"]
             del content["water_id"]
@@ -293,3 +336,13 @@ def api_brewed_coffees(request):
             )
             response.status_code = 400
             return response
+
+@require_http_methods(["GET"])
+def api_brewed_coffees_by_user(request, pk):
+    if request.method == "GET":
+        user = CustomUser.objects.get(id=pk)
+        brewed_coffees = user.brewedcoffee.all()
+        return JsonResponse(
+                {"brewed_coffees":brewed_coffees},
+                encoder=BrewedCoffeeEncoder,
+            )

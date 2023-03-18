@@ -141,6 +141,7 @@ function CreateBrewedCoffee(props) {
         event.preventDefault()
         const data = {}
         data.date_time_brewed = dateTimeBrewed
+        data.user_id = localStorage.getItem('user_id')
         data.method_id = Number(method)
         data.bean_id = Number(bean)
         data.water_id = Number(water)
@@ -259,7 +260,7 @@ function CreateBrewedCoffee(props) {
                                 {props.grinders.map(grinder=> {
                                     return (
                                         <option value={grinder.id} key={grinder.id}>
-                                            {grinder.make} {grinder.model}, {grinder.burrs} burrs
+                                            {grinder.make} {grinder.model}, {grinder.burrs}
                                         </option>
                                     )
                                 })}
@@ -315,7 +316,7 @@ function CreateBrewedCoffee(props) {
                             <label>Preinfusion Time, seconds</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input value={pressureBar} onChange={handlePressureChange} required type="number" name="pressure" id="pressure" className="form-control" />
+                            <input value={pressureBar} onChange={handlePressureChange} type="number" name="pressure" id="pressure" className="form-control" />
                             <label>Group Pressure, bar</label>
                         </div>
                         <div className="mb-3">

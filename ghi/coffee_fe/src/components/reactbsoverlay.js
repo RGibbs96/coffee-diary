@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import CreateBrewedCoffee from '../common/CreateBrewedCoffee';
+import CreateBrewedCoffee from '../common/Create/CreateBrewedCoffee';
 
 function ReactBsOverlay(props) {
   const [show, setShow] = useState(false);

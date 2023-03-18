@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function CreateGrinder(props) {
+function CreateBrewer(props) {
 
     const [make, setMake] = useState("")
     const [model, setModel] = useState("")
@@ -10,7 +10,8 @@ function CreateGrinder(props) {
         const data = {}
         data.make = make
         data.model = model
-        const url = 'http://localhost:8000/api/grinders/'
+        data.user_id = localStorage.getItem('user_id')
+        const url = 'http://localhost:8000/api/brewers/'
         const fetchConfig = {
             method: "post",
             body: JSON.stringify(data),
@@ -22,7 +23,7 @@ function CreateGrinder(props) {
         if (response.ok) {
             setMake("")
             setModel("")
-            props.fetchGrinders()
+            props.fetchBrewers()
         }
     }
 
@@ -39,8 +40,8 @@ function CreateGrinder(props) {
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
-                    <h1>Create a new grinder</h1>
-                    <form onSubmit={handleSubmit} id="create-grinder">
+                    <h1>Create a new brewer</h1>
+                    <form onSubmit={handleSubmit} id="create-brewer">
                         <div className="form-floating mb-3">
                             <input value={make} onChange={handleMakeChange} required type="text" name="make" id="make" className="form-control" />
                             <label>Make</label>
@@ -59,4 +60,4 @@ function CreateGrinder(props) {
 
 }
 
-export default CreateGrinder
+export default CreateBrewer

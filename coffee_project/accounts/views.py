@@ -2,32 +2,29 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
 from .encoders import CustomUserEncoder
+import token
 
 # Create your views here.
 
 from .models import CustomUser
 
+@require_http_methods(["GET"])
+def get_users(request):
+    if request.method == "GET":
+        user = request.user
+        print(user)
+        users = CustomUser.objects.all()
+        return JsonResponse(
+            {"users":users},
+            encoder=CustomUserEncoder
+        )
 @require_http_methods(["POST"])
-def create_user(request):
-    if request.method == "POST":
-        content = json.loads(request.body)
-        print(content)
+def get_user_from_email(request,email):
+    if request.method == "GET":
+        email += "@gmail.com"
+        user = CustomUser.objects.get(email=email)
 
-        try:
-            user = CustomUser.objects.create_user(username=content["username"],email=content["email"],password=content["password"])
-            print(user)
-            user.first_name = content["first_name"]
-            user.last_name = content["last_name"]
-            print("hello")
-            user.save()
-            return JsonResponse(
-                {"user":user},
-                encoder=CustomUserEncoder,
-                safe=False,
-            )
-        except:
-            response = JsonResponse(
-                {"message":"Could not create the user"}
-            )
-            response.status_code = 400
-            return response
+        return JsonResponse(
+            {"user":user},
+            encoder=CustomUserEncoder
+        )

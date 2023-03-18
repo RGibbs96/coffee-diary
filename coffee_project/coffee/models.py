@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from accounts.models import CustomUser
 
 class Origin(models.Model):
     name = models.CharField(max_length=100)
@@ -59,6 +60,12 @@ class WaterBlend(models.Model):
     water_quantity_g = models.PositiveIntegerField()
     baking_soda_quantity_g = models.FloatField(null=True, blank=True)
     epsom_salt_quantity_g = models.FloatField(null=True, blank=True)
+    user = models.ForeignKey(
+        CustomUser,
+        related_name="waterblend",
+        on_delete=models.CASCADE
+    )
+
 
 class BrewMethod(models.Model):
     name = models.CharField(max_length=100)
@@ -67,10 +74,20 @@ class Grinder(models.Model):
     make = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
     burrs = models.CharField(max_length=100, default="stock")
+    user = models.ForeignKey(
+        CustomUser,
+        related_name="grinder",
+        on_delete=models.CASCADE
+    )
 
 class Brewer(models.Model):
     make = models.CharField(max_length=200)
     model = models.CharField(max_length=200)
+    user = models.ForeignKey(
+        CustomUser,
+        related_name="brewer",
+        on_delete=models.CASCADE
+    )
 
 class Creamer(models.Model):
     name = models.CharField(max_length=100)
@@ -80,6 +97,11 @@ class Sweetener(models.Model):
 
 class BrewedCoffee(models.Model):
     date_time_brewed = models.DateTimeField()
+    user = models.ForeignKey(
+        CustomUser,
+        related_name="brewedcoffee",
+        on_delete=models.CASCADE
+    )
     method = models.ForeignKey(
         BrewMethod,
         related_name="method",
