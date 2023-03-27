@@ -17,7 +17,6 @@ class CoffeeBean(models.Model):
         related_name="roaster",
         on_delete=models.PROTECT,
     )
-    roast_date = models.DateField()
     roast_level = models.CharField(max_length=100)
     roast_number = models.IntegerField(
         validators = [
@@ -112,6 +111,7 @@ class BrewedCoffee(models.Model):
         related_name="bean",
         on_delete=models.PROTECT,
     )
+    roast_date = models.DateField()
     water = models.ForeignKey(
         WaterBlend,
         related_name="water",

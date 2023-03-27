@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Nav from './Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateOrigin from './common/Create/CreateOrigin';
 import DisplayCoffeeCards from './common/CoffeeCards';
@@ -39,6 +40,7 @@ import CreateGrinder from './common/Create/CreateGrinder';
       if (response.ok) {
         const user = await response.json()
         localStorage.setItem('user_id', user.pk)
+        localStorage.setItem('username', user.username)
       }
   }
 }
@@ -151,7 +153,6 @@ const user_id = localStorage.getItem('user_id')
   }
 
   useEffect(() => {
-    console.log("running use effect")
     if (localStorage.getItem('token') !== null) {
     fetchBrewedCoffees()
     fetchWaterBlends()
@@ -169,7 +170,7 @@ const user_id = localStorage.getItem('user_id')
   return (
     <BrowserRouter>
       <Nav />
-      <div className="container">
+      <div className="container-fluid">
         <Routes>
             <Route path="/login/" element={ <Login />} />
             <Route path="/signup/" element={ <Signup />} />

@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
 from accounts.models import CustomUser
+from .embedding import get_coffee_bean_embedding_vector
+from .vector_management import upsert_coffee_vector, get_similar_vectors
 
 from .models import (
     Origin,
@@ -80,6 +82,7 @@ def api_roasters(request):
 def api_coffee_beans(request):
     if request.method == "GET":
         coffee_beans = CoffeeBean.objects.all()
+
         return JsonResponse(
             {"coffee_beans": coffee_beans},
             encoder = CoffeeBeanEncoder
@@ -100,8 +103,9 @@ def api_coffee_beans(request):
         del content["origin_id2"]
         del content["origin_id3"]
         del content["roaster_id"]
-        print(content)
         coffee_bean = CoffeeBean.objects.create(**content)
+        bean_id, vector = get_coffee_bean_embedding_vector(coffee_bean)
+        upsert_coffee_vector(bean_id, vector)
 
         return JsonResponse(
             {"coffee_bean":coffee_bean},
@@ -302,8 +306,8 @@ def api_brewed_coffees(request):
     else:
         try:
             content = json.loads(request.body)
+            print("Content is:",content)
             user = CustomUser.objects.get(id=content["user_id"])
-            print(user)
             method = BrewMethod.objects.get(id=content["method_id"])
             bean = CoffeeBean.objects.get(id=content["bean_id"])
             water = WaterBlend.objects.get(id=content["water_id"])
@@ -322,7 +326,7 @@ def api_brewed_coffees(request):
             del content["grinder_id"]
             del content["brewer_id"]
 
-            print(content)
+            print("Content is:",content)
 
             brewed_coffee = BrewedCoffee.objects.create(**content)
             return JsonResponse(
@@ -346,3 +350,13 @@ def api_brewed_coffees_by_user(request, pk):
                 {"brewed_coffees":brewed_coffees},
                 encoder=BrewedCoffeeEncoder,
             )
+
+
+@require_http_methods(["GET"])
+def api_similar_vectors_by_bean_id(request, pk):
+    if request.method == "GET":
+        bean_id = pk
+        matched_bean_ids = get_similar_vectors(bean_id)
+        return JsonResponse({
+            "matched_bean_ids": matched_bean_ids
+        })

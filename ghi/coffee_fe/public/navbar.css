@@ -1,0 +1,74 @@
+/* Navbar specific css */
+
+.navbar {
+    background: #1F1B18;
+    border-bottom: 1px solid #2B2E39;
+}
+
+#navbar-brand {
+    text-decoration:none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFBF5;
+}
+
+#nav-dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px 0;
+    width: 105px;
+    height: 32px;
+    background: #1F1B18;
+    border-color: #1F1B18;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    color: #CCCFD4;
+}
+
+#nav-div {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    background: rgba(133, 163, 224, 0.1);
+    border-color: rgba(133, 163, 224, 0.1);
+    border-radius: 4px;
+}
+
+#nav-link{
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 24px;
+    color: #CCCFD4;
+}
+#nav-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px 0;
+    width: 105px;
+    height: 32px;
+    background: #52433B;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    color: #CCCFD4;
+    border: 1px solid rgba(133, 163, 224, 0.1);
+}

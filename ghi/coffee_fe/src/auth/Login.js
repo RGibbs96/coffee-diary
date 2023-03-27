@@ -19,7 +19,6 @@ const Login = () => {
         const data = {}
         data.email = email
         data.password = password
-        console.log(data)
         const url = 'http://localhost:8000/accounts/auth/login/'
         const fetchConfig = {
             method: 'post',
@@ -39,34 +38,39 @@ const Login = () => {
             setPassword('');
             localStorage.clear();
             setErrors(true);
+            alert("Cannot log in with the provided credentials")
         }
     }
 
     return (
         <div>
-            {loading === false && <h1>Login</h1>}
-            {errors === true && <h2>Cannot log in with the provided credentials</h2>}
+            {loading === false && <h1 style={{fontStyle:"normal",fontWeight:"700",fontSize:"40px",lineHeight:"48px"}}>Login</h1>}
+            {errors === true}
             {loading === false && (
                 <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email address:</label> <br />
-                <input
-                  name='email'
-                  type='email'
-                  value={email}
-                  required
-                  onChange={e => setEmail(e.target.value)}
-                />{' '}
-                <br />
-                <label htmlFor='password'>Password:</label> <br />
-                <input
-                  name='password'
-                  type='password'
-                  value={password}
-                  required
-                  onChange={e => setPassword(e.target.value)}
-                />{' '}
-                <br />
-                <input type='submit' value='Login' />
+                <div className="form-floating mb-3">
+                    <input
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                        type="email"
+                        name="email"
+                        className="form-control"
+                        />
+                        <label style={{color:"black"}}>Email address</label>
+                </div>
+                <div className="form-floating mb-3">
+                    <input
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        required
+                        type="password"
+                        name="password"
+                        className="form-control"
+                        />
+                        <label style={{color:"black"}}>Password</label>
+                </div>
+                <button className="btn btn-primary">Login</button>
               </form>
             )}
         </div>

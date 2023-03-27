@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import Slider from '@mui/material/Slider'
-import Button from 'react-bootstrap/Button'
+import { useState } from 'react';
+import Slider from '@mui/material/Slider';
+import Button from 'react-bootstrap/Button';
+import Select from 'react-select';
 
 function CreateBrewedCoffee(props) {
 
     const [dateTimeBrewed, setDateTimeBrewed] = useState("")
     const [method, setMethod] = useState("")
     const [bean, setBean] = useState("")
+    const [roastDate, setRoastDate] = useState("")
     const [water, setWater] = useState("")
     const [grinder, setGrinder] = useState("")
     const [brewer, setBrewer] = useState("")
@@ -36,6 +38,10 @@ function CreateBrewedCoffee(props) {
     const handleDateTimeChange = (event) => {
         const value = event.target.value
         setDateTimeBrewed(value)
+    }
+    const handleRoastDateChange = (event) => {
+        const value = event.target.value
+        setRoastDate(value)
     }
     const handleMethodChange = (event) => {
         const value = event.target.value
@@ -133,9 +139,6 @@ function CreateBrewedCoffee(props) {
         const value = event.target.value
         setGeneralNotes(value)
     }
-    const handleClick = (event) => {
-        console.log("hi")
-    }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -207,13 +210,56 @@ function CreateBrewedCoffee(props) {
 
     }
 
+    const handleSelect = (e) => {
+        let coffee = e.value
+        console.log("coffee",coffee)
+        setMethod(coffee.method.id)
+        setBean(coffee.bean.id)
+        setRoastDate(coffee.roast_date)
+        setWater(coffee.water.id)
+        setGrinder(coffee.grinder.id)
+        setBrewer(coffee.brewer.id)
+        setCoffeeDose(coffee.coffee_dose_g)
+        setLiquidYield(coffee.liquid_yield_g)
+        setTotalBrewTime(coffee.total_brew_time_s)
+
+
+        /*
+        data.liquid_yield_g = Number(liquidYield)
+        data.total_brew_time_s = Number(totalBrewTime)
+        data.grind_size = Number(grindSize)
+        data.water_temperature = Number(waterTemperature)
+        data.preinfusion = (preinfusion === "true")
+        data.pressure_bar = Number(pressureBar)
+        data.bloom = (bloom === "true")
+        data.bitterness = bitterness
+        data.acidity = acidity
+        data.brightness = brightness
+        data.sweetness = sweetness
+        data.body = body
+        data.clarity = clarity
+        data.rating = rating
+        data.general_notes = generalNotes */
+    }
+
+    const previousCoffees = props.brewedCoffees
+    console.log("previous Coffees", previousCoffees)
+    let options = []
+    for(let coffee of previousCoffees) {
+        options.push({value: coffee, label: `date/timebrewed,${coffee.bean.name}. Rated ${coffee.rating}/10`})
+    }
+
+    console.log(options)
+
     return (
         <div className="my-5 container">
-            <div className="offset-3 col-6">
-                <div className="shadow p-4 mt-4">
-                    <Button className="mb-3" onClick={handleClick}>Load previous coffee</Button>
+            <div className="offset-2 col-8">
+                <div className="shadow p-4 mt-4 center" id="form-modal">
+                    <div className="mb-3">
+                        <Select options={options} onChange={handleSelect} style={{color:"black"}} />
+                    </div>
                     <form onSubmit={handleSubmit} id="create-brewed-coffee">
-                        <div className="form-floating mb-3">
+                            <div className="form-floating mb-3">
                             <input value={dateTimeBrewed} onChange={handleDateTimeChange} required type="datetime-local" name="datetime" id="datetime" className="form-control" />
                             <label>Date/Time Brewed</label>
                         </div>
@@ -241,6 +287,10 @@ function CreateBrewedCoffee(props) {
                                     )
                                 })}
                             </select>
+                        </div>
+                        <div className="form-floating mb-3">
+                            <input value={roastDate} onChange={handleRoastDateChange} required type="date" name="date" id="date" className="form-control" />
+                            <label>Roast Date</label>
                         </div>
                         <div className="mb-3">
                             <select value={water} onChange={handleWaterChange} required name="water" id="water" className="form-select">
