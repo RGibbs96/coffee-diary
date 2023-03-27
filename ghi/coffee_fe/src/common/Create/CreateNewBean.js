@@ -42,8 +42,16 @@ function CreateBean(props) {
         data.process = process
         data.single_origin = singleOrigin
         data.note1 = note1
-        data.note2 = note2
-        data.note3 = note3
+        if (note2 === ""){
+            data.note2 = null
+        } else {
+            data.note2 = note2
+        }
+        if (note3 === ""){
+            data.note3 = null
+        } else {
+            data.note3 = note3
+        }
 
         if (originId1 === ""){
             data.origin_id1 = null
@@ -65,10 +73,6 @@ function CreateBean(props) {
             data.origin_id3 = null
         }
         data.roaster_id = Number(roasterId)
-
-        console.log(data)
-
-
         const url = 'http://localhost:8000/api/coffeebeans/'
         const fetchConfig = {
             method: "post",
@@ -86,7 +90,6 @@ function CreateBean(props) {
             setElevation1("")
             setElevation2("")
             setProcess("")
-            setSingleOrigin(false)
             setNote1("")
             setNote2("")
             setNote3("")
@@ -167,7 +170,7 @@ function CreateBean(props) {
                     <form onSubmit={handleSubmit} id="add-bean">
                         <div className="form-floating mb-3">
                             <input value={name} onChange={handleNameChange} required type="text" name="name" id="name" className="form-control" />
-                            <label>Name</label>
+                            <label>Name*</label>
                         </div>
                         <div className="mb-3">
                             <select
@@ -309,14 +312,14 @@ function CreateBean(props) {
                         </div>
                         <div className="form-floating mb-3">
                             <input value={note1} onChange={handleNote1Change} required type="text" name="note1" id="note1" className="form-control" />
-                            <label>Note 1</label>
+                            <label>Note 1*</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input value={note2} onChange={handleNote2Change} required type="text" name="note2" id="note2" className="form-control" />
+                            <input value={note2} onChange={handleNote2Change} type="text" name="note2" id="note2" className="form-control" />
                             <label>Note 2</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input value={note3} onChange={handleNote3Change} required type="text" name="note3" id="note3" className="form-control" />
+                            <input value={note3} onChange={handleNote3Change} type="text" name="note3" id="note3" className="form-control" />
                             <label>Note 3</label>
                         </div>
 

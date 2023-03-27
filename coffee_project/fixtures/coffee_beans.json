@@ -1,0 +1,1710 @@
+[
+{
+    "model": "coffee.origin",
+    "pk": 1,
+    "fields": {
+        "name": "Peru"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 2,
+    "fields": {
+        "name": "Kenya"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 3,
+    "fields": {
+        "name": "Ethiopia"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 4,
+    "fields": {
+        "name": "Ecuador"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 5,
+    "fields": {
+        "name": "Myanmar"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 6,
+    "fields": {
+        "name": "Blend"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 7,
+    "fields": {
+        "name": "Colombia"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 8,
+    "fields": {
+        "name": "Guatemala"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 9,
+    "fields": {
+        "name": "Uganda"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 10,
+    "fields": {
+        "name": "El Salvador"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 11,
+    "fields": {
+        "name": "Peru"
+    }
+},
+{
+    "model": "coffee.origin",
+    "pk": 12,
+    "fields": {
+        "name": "Madagascar"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 1,
+    "fields": {
+        "name": "Square Mile Coffee Roasters",
+        "url": "https://shop.squaremilecoffee.com/"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 2,
+    "fields": {
+        "name": "Stumptown Coffee Roasters",
+        "url": "https://www.stumptowncoffee.com/"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 3,
+    "fields": {
+        "name": "Blue Bottle Coffee",
+        "url": "https://bluebottlecoffee.com/us/eng"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 4,
+    "fields": {
+        "name": "Black & White Roasters",
+        "url": "https://www.blackwhiteroasters.com/"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 5,
+    "fields": {
+        "name": "Verve Coffee Roasters",
+        "url": "https://www.vervecoffee.com/"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 6,
+    "fields": {
+        "name": "Abracadabra Coffee Co.",
+        "url": "https://abracadabracoffeeco.com/"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 7,
+    "fields": {
+        "name": "Tandem Coffee",
+        "url": "https://www.tandemcoffee.com/"
+    }
+},
+{
+    "model": "coffee.roaster",
+    "pk": 8,
+    "fields": {
+        "name": "Onyx Coffee Lab",
+        "url": "https://onyxcoffeelab.com/"
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 1,
+    "fields": {
+        "name": "Easter Espresso Blend (2023)",
+        "picture_url": "https://cdn.shopify.com/s/files/1/0017/1562/products/EB-Espresso-Bundle_large.jpg?v=1678197646",
+        "roaster": 1,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": null,
+        "elevation2": null,
+        "process": "Washed",
+        "single_origin": false,
+        "origin1": 1,
+        "origin2": 2,
+        "origin3": null,
+        "note1": "Chocolate",
+        "note2": "Caramel",
+        "note3": "Cherry and Currant",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 2,
+    "fields": {
+        "name": "Chalchissa",
+        "picture_url": "cdn.shopify.com/s/files/1/0017/1562/products/Chalchissa-SQUARE_large.jpg?v=1669367619",
+        "roaster": 1,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": 2050,
+        "elevation2": 2150,
+        "process": "Washed",
+        "single_origin": true,
+        "origin1": 3,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Strawberry",
+        "note2": "Cherry",
+        "note3": "Toffee",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 3,
+    "fields": {
+        "name": "Sweetshop",
+        "picture_url": "cdn.shopify.com/s/files/1/0017/1562/products/SS-62-SQUARE_large.jpg?v=1675848483",
+        "roaster": 1,
+        "roast_date": "2023-03-15",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": null,
+        "elevation2": null,
+        "process": "Natural and washed",
+        "single_origin": false,
+        "origin1": 3,
+        "origin2": 2,
+        "origin3": null,
+        "note1": "Intense fruitiness",
+        "note2": "Sticky texture",
+        "note3": null,
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 4,
+    "fields": {
+        "name": "Ecuador Fausto Romo",
+        "picture_url": "https://stumptown-shop.imgix.net/products/ExtremelyLimitedFausto.png?v=1677872803&auto=format,compress&w=375",
+        "roaster": 2,
+        "roast_date": "2023-03-17",
+        "roast_level": "Light",
+        "roast_number": null,
+        "elevation1": null,
+        "elevation2": null,
+        "process": "Natural",
+        "single_origin": true,
+        "origin1": 4,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Peach",
+        "note2": "Raspberry",
+        "note3": "Floral",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 5,
+    "fields": {
+        "name": "Shan State Mya Ze Di Village",
+        "picture_url": "https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_1920,q_auto/Coffee/Myanmar/Myanmar-Shan-State-Mya-Ze-Di-Village-Natural-M1-Hero.png",
+        "roaster": 3,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium Light",
+        "roast_number": null,
+        "elevation1": 1300,
+        "elevation2": 1400,
+        "process": "Natural",
+        "single_origin": true,
+        "origin1": 5,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Fig",
+        "note2": "Kiwi",
+        "note3": "Lemongrass",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 6,
+    "fields": {
+        "name": "Giant Steps",
+        "picture_url": "https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Coffee/Giant%20Steps/Giant-Steps-M1-Hero.png",
+        "roaster": 3,
+        "roast_date": "2023-03-15",
+        "roast_level": "Dark",
+        "roast_number": null,
+        "elevation1": null,
+        "elevation2": null,
+        "process": "Natural",
+        "single_origin": false,
+        "origin1": 6,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Cocoa",
+        "note2": "Toasted Marshmellow",
+        "note3": "Graham Cracker",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 7,
+    "fields": {
+        "name": "17ft Ceiling",
+        "picture_url": "https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Coffee/17%20Ft%20Ceiling/17-Ft-Ceiling-M1-Hero.png",
+        "roaster": 3,
+        "roast_date": "2023-03-16",
+        "roast_level": "Dark",
+        "roast_number": null,
+        "elevation1": null,
+        "elevation2": null,
+        "process": "Washed",
+        "single_origin": false,
+        "origin1": 6,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Caramel",
+        "note2": "Almond",
+        "note3": "Dried cherry",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 8,
+    "fields": {
+        "name": "The Future",
+        "picture_url": "https://cdn.shopify.com/s/files/1/2988/2574/products/thefuturetequilasunrise_onlinecard_3x-100_1800x1800.jpg?v=1678887659",
+        "roaster": 4,
+        "roast_date": "2023-03-15",
+        "roast_level": "Light Medium",
+        "roast_number": null,
+        "elevation1": null,
+        "elevation2": null,
+        "process": "Anaerobic Natural",
+        "single_origin": false,
+        "origin1": 3,
+        "origin2": 7,
+        "origin3": null,
+        "note1": "Fresh citrus",
+        "note2": "Red raspberry",
+        "note3": "Pink bubblegum",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 9,
+    "fields": {
+        "name": "Felipe Trujillo - Black Honey",
+        "picture_url": "https://cdn.shopify.com/s/files/1/2988/2574/products/felipetrujillo_online_3x-100_1800x1800.jpg?v=1678291658",
+        "roaster": 4,
+        "roast_date": "2023-03-15",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": 1950,
+        "elevation2": 2050,
+        "process": "Black Honey",
+        "single_origin": true,
+        "origin1": 7,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Nectarine",
+        "note2": "Plum",
+        "note3": "Natural gamay",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 10,
+    "fields": {
+        "name": "Kumquat Caturra",
+        "picture_url": "https://cdn.shopify.com/s/files/1/2988/2574/products/Rodrigo_sanchez_online_3x-100_1800x1800.jpg?v=1676410168",
+        "roaster": 4,
+        "roast_date": "2023-03-16",
+        "roast_level": "Light Medium",
+        "roast_number": null,
+        "elevation1": 1730,
+        "elevation2": 1730,
+        "process": "Washed",
+        "single_origin": true,
+        "origin1": 7,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Orange sherbet",
+        "note2": "Tart mango",
+        "note3": "Apricot",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 11,
+    "fields": {
+        "name": "The Classic",
+        "picture_url": "https://cdn.shopify.com/s/files/1/2988/2574/products/classic_online_1800x1800.jpg?v=1628808713",
+        "roaster": 4,
+        "roast_date": "2023-03-17",
+        "roast_level": "Medium Dark",
+        "roast_number": null,
+        "elevation1": 1600,
+        "elevation2": 2000,
+        "process": "Washed Anerobic",
+        "single_origin": false,
+        "origin1": 6,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Caramelized sugars",
+        "note2": "Stone fruits",
+        "note3": "Milk chocolate",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 12,
+    "fields": {
+        "name": "Petrona Perez",
+        "picture_url": "https://cdn.shopify.com/s/files/1/0035/9372/products/PetronaPerez.png?v=1676657560",
+        "roaster": 5,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium Light",
+        "roast_number": null,
+        "elevation1": 2100,
+        "elevation2": 2100,
+        "process": "Washed",
+        "single_origin": true,
+        "origin1": 8,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Cocoa",
+        "note2": "Golden apple",
+        "note3": "Brazil nuts",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 13,
+    "fields": {
+        "name": "Sermon",
+        "picture_url": "https://cdn.shopify.com/s/files/1/0035/9372/products/Sermon_c4c1e174-5789-432f-a38f-68d9670b5136.png?v=1670627814",
+        "roaster": 5,
+        "roast_date": "2023-03-15",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": 1200,
+        "elevation2": 2000,
+        "process": "Washed/Natural",
+        "single_origin": false,
+        "origin1": 9,
+        "origin2": 3,
+        "origin3": 7,
+        "note1": "Blueberry pie",
+        "note2": "Cocoa",
+        "note3": "Candied pecan",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 14,
+    "fields": {
+        "name": "Seabright",
+        "picture_url": "https://cdn.shopify.com/s/files/1/0035/9372/products/Seabright.png?v=1670627801",
+        "roaster": 5,
+        "roast_date": "2023-03-17",
+        "roast_level": "Medium Dark",
+        "roast_number": null,
+        "elevation1": 1700,
+        "elevation2": 2000,
+        "process": "Washed",
+        "single_origin": false,
+        "origin1": 10,
+        "origin2": 8,
+        "origin3": null,
+        "note1": "Honeydew",
+        "note2": "Apricot",
+        "note3": "Hazelnut",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 15,
+    "fields": {
+        "name": "The 1950",
+        "picture_url": "https://cdn.shopify.com/s/files/1/0035/9372/products/the1950_60b5a4ad-cbd9-4a31-b382-89d7d3e6df4d.png?v=1670627838",
+        "roaster": 5,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": 2000,
+        "elevation2": 2200,
+        "process": "Washed",
+        "single_origin": true,
+        "origin1": 3,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Nectarine",
+        "note2": "Key lime",
+        "note3": "Brown sugar",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 16,
+    "fields": {
+        "name": "Honey Wush Wush",
+        "picture_url": "https://cdn.shopify.com/s/files/1/0642/5991/5990/products/dopest-finca-santa-maria-abracadabra-coffee-web.jpg",
+        "roaster": 6,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium Light",
+        "roast_number": null,
+        "elevation1": 1775,
+        "elevation2": 1775,
+        "process": "Honey",
+        "single_origin": true,
+        "origin1": 7,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Chocolate",
+        "note2": "Peach",
+        "note3": "Honey",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 17,
+    "fields": {
+        "name": "Bertha Cruz",
+        "picture_url": "https://cdn.shopify.com/s/files/1/2428/8433/products/BERTHACRUZ2023WEBBADGE_2000x.png?v=1678722177",
+        "roaster": 7,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium Light",
+        "roast_number": null,
+        "elevation1": 1850,
+        "elevation2": 1850,
+        "process": "Washed",
+        "single_origin": true,
+        "origin1": 11,
+        "origin2": null,
+        "origin3": null,
+        "note1": "White grape",
+        "note2": "Apricot",
+        "note3": "Peanut brittle",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 18,
+    "fields": {
+        "name": "Monarch",
+        "picture_url": "https://d2j6dbq0eux0bg.cloudfront.net/images/40316590/1791519354.jpg",
+        "roaster": 8,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium Dark",
+        "roast_number": null,
+        "elevation1": 1800,
+        "elevation2": 1800,
+        "process": "Washed/Natural",
+        "single_origin": false,
+        "origin1": 7,
+        "origin2": 3,
+        "origin3": null,
+        "note1": "Dark chocolate",
+        "note2": "Molasses",
+        "note3": "Red wine",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 19,
+    "fields": {
+        "name": "Hayissa Olocho",
+        "picture_url": "oops",
+        "roaster": 8,
+        "roast_date": "2023-03-22",
+        "roast_level": "Medium Light",
+        "roast_number": null,
+        "elevation1": 2000,
+        "elevation2": 2000,
+        "process": "Natural",
+        "single_origin": true,
+        "origin1": 3,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Raspberry",
+        "note2": "Raw honey",
+        "note3": "Hibiscus",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 20,
+    "fields": {
+        "name": "Power Nap",
+        "picture_url": "https://cdn.shopify.com/s/files/1/1707/3261/products/PowerNap_SquareHero_500x.png?v=1655750207",
+        "roaster": 8,
+        "roast_date": "2023-03-16",
+        "roast_level": "Medium",
+        "roast_number": null,
+        "elevation1": 1950,
+        "elevation2": 2000,
+        "process": "Washed",
+        "single_origin": false,
+        "origin1": 7,
+        "origin2": 3,
+        "origin3": null,
+        "note1": "Brown sugar",
+        "note2": "Cocoa",
+        "note3": "Floral",
+        "note4": null
+    }
+},
+{
+    "model": "coffee.coffeebean",
+    "pk": 21,
+    "fields": {
+        "name": "Eclipse",
+        "picture_url": "https://cdn.shopify.com/s/files/1/1707/3261/products/Eclipse_SquareHero_500x.png?v=1655750674",
+        "roaster": 8,
+        "roast_date": "2023-03-08",
+        "roast_level": "Dark",
+        "roast_number": null,
+        "elevation1": 1850,
+        "elevation2": 1850,
+        "process": "Washed",
+        "single_origin": true,
+        "origin1": 8,
+        "origin2": null,
+        "origin3": null,
+        "note1": "Bakers chocolate",
+        "note2": "Burnt sugar",
+        "note3": "Smoked vanilla bean",
+        "note4": null
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2023-03-18T20:08:28.609Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Roaster object (1)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 1,
+        "codename": "add_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 1,
+        "codename": "change_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 1,
+        "codename": "delete_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 1,
+        "codename": "view_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add brewer",
+        "content_type": 2,
+        "codename": "add_brewer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change brewer",
+        "content_type": 2,
+        "codename": "change_brewer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete brewer",
+        "content_type": 2,
+        "codename": "delete_brewer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view brewer",
+        "content_type": 2,
+        "codename": "view_brewer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add brew method",
+        "content_type": 3,
+        "codename": "add_brewmethod"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change brew method",
+        "content_type": 3,
+        "codename": "change_brewmethod"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete brew method",
+        "content_type": 3,
+        "codename": "delete_brewmethod"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view brew method",
+        "content_type": 3,
+        "codename": "view_brewmethod"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add creamer",
+        "content_type": 4,
+        "codename": "add_creamer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change creamer",
+        "content_type": 4,
+        "codename": "change_creamer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete creamer",
+        "content_type": 4,
+        "codename": "delete_creamer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view creamer",
+        "content_type": 4,
+        "codename": "view_creamer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add grinder",
+        "content_type": 5,
+        "codename": "add_grinder"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change grinder",
+        "content_type": 5,
+        "codename": "change_grinder"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete grinder",
+        "content_type": 5,
+        "codename": "delete_grinder"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view grinder",
+        "content_type": 5,
+        "codename": "view_grinder"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add origin",
+        "content_type": 6,
+        "codename": "add_origin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change origin",
+        "content_type": 6,
+        "codename": "change_origin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete origin",
+        "content_type": 6,
+        "codename": "delete_origin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view origin",
+        "content_type": 6,
+        "codename": "view_origin"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add roaster",
+        "content_type": 7,
+        "codename": "add_roaster"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change roaster",
+        "content_type": 7,
+        "codename": "change_roaster"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete roaster",
+        "content_type": 7,
+        "codename": "delete_roaster"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view roaster",
+        "content_type": 7,
+        "codename": "view_roaster"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add sweetener",
+        "content_type": 8,
+        "codename": "add_sweetener"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change sweetener",
+        "content_type": 8,
+        "codename": "change_sweetener"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete sweetener",
+        "content_type": 8,
+        "codename": "delete_sweetener"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view sweetener",
+        "content_type": 8,
+        "codename": "view_sweetener"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add water blend",
+        "content_type": 9,
+        "codename": "add_waterblend"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change water blend",
+        "content_type": 9,
+        "codename": "change_waterblend"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete water blend",
+        "content_type": 9,
+        "codename": "delete_waterblend"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view water blend",
+        "content_type": 9,
+        "codename": "view_waterblend"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add coffee bean",
+        "content_type": 10,
+        "codename": "add_coffeebean"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change coffee bean",
+        "content_type": 10,
+        "codename": "change_coffeebean"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete coffee bean",
+        "content_type": 10,
+        "codename": "delete_coffeebean"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view coffee bean",
+        "content_type": 10,
+        "codename": "view_coffeebean"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add brewed coffee",
+        "content_type": 11,
+        "codename": "add_brewedcoffee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change brewed coffee",
+        "content_type": 11,
+        "codename": "change_brewedcoffee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete brewed coffee",
+        "content_type": 11,
+        "codename": "delete_brewedcoffee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view brewed coffee",
+        "content_type": 11,
+        "codename": "view_brewedcoffee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 12,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 12,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 12,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 12,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 13,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 13,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 13,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 13,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 14,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 14,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 14,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 14,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 15,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 15,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 15,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 15,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 16,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 16,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 16,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 16,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add Token",
+        "content_type": 17,
+        "codename": "add_token"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change Token",
+        "content_type": 17,
+        "codename": "change_token"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete Token",
+        "content_type": 17,
+        "codename": "delete_token"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view Token",
+        "content_type": 17,
+        "codename": "view_token"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add token",
+        "content_type": 18,
+        "codename": "add_tokenproxy"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change token",
+        "content_type": 18,
+        "codename": "change_tokenproxy"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete token",
+        "content_type": 18,
+        "codename": "delete_tokenproxy"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view token",
+        "content_type": 18,
+        "codename": "view_tokenproxy"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add site",
+        "content_type": 19,
+        "codename": "add_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change site",
+        "content_type": 19,
+        "codename": "change_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete site",
+        "content_type": 19,
+        "codename": "delete_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view site",
+        "content_type": 19,
+        "codename": "view_site"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add email address",
+        "content_type": 20,
+        "codename": "add_emailaddress"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change email address",
+        "content_type": 20,
+        "codename": "change_emailaddress"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete email address",
+        "content_type": 20,
+        "codename": "delete_emailaddress"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view email address",
+        "content_type": 20,
+        "codename": "view_emailaddress"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can add email confirmation",
+        "content_type": 21,
+        "codename": "add_emailconfirmation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can change email confirmation",
+        "content_type": 21,
+        "codename": "change_emailconfirmation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can delete email confirmation",
+        "content_type": 21,
+        "codename": "delete_emailconfirmation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can view email confirmation",
+        "content_type": 21,
+        "codename": "view_emailconfirmation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+        "name": "Can add social account",
+        "content_type": 22,
+        "codename": "add_socialaccount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+        "name": "Can change social account",
+        "content_type": 22,
+        "codename": "change_socialaccount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+        "name": "Can delete social account",
+        "content_type": 22,
+        "codename": "delete_socialaccount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+        "name": "Can view social account",
+        "content_type": 22,
+        "codename": "view_socialaccount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+        "name": "Can add social application",
+        "content_type": 23,
+        "codename": "add_socialapp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+        "name": "Can change social application",
+        "content_type": 23,
+        "codename": "change_socialapp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+        "name": "Can delete social application",
+        "content_type": 23,
+        "codename": "delete_socialapp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+        "name": "Can view social application",
+        "content_type": 23,
+        "codename": "view_socialapp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+        "name": "Can add social application token",
+        "content_type": 24,
+        "codename": "add_socialtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+        "name": "Can change social application token",
+        "content_type": 24,
+        "codename": "change_socialtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+        "name": "Can delete social application token",
+        "content_type": 24,
+        "codename": "delete_socialtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+        "name": "Can view social application token",
+        "content_type": 24,
+        "codename": "view_socialtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "accounts",
+        "model": "customuser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "coffee",
+        "model": "brewer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "coffee",
+        "model": "brewmethod"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "coffee",
+        "model": "creamer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "coffee",
+        "model": "grinder"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "coffee",
+        "model": "origin"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "coffee",
+        "model": "roaster"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "coffee",
+        "model": "sweetener"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "coffee",
+        "model": "waterblend"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "coffee",
+        "model": "coffeebean"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "coffee",
+        "model": "brewedcoffee"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "authtoken",
+        "model": "token"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "authtoken",
+        "model": "tokenproxy"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "sites",
+        "model": "site"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "account",
+        "model": "emailaddress"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+        "app_label": "account",
+        "model": "emailconfirmation"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+        "app_label": "socialaccount",
+        "model": "socialaccount"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+        "app_label": "socialaccount",
+        "model": "socialapp"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+        "app_label": "socialaccount",
+        "model": "socialtoken"
+    }
+},
+{
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+        "domain": "example.com",
+        "name": "example.com"
+    }
+}
+]

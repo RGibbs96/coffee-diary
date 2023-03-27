@@ -15,6 +15,7 @@ from .views import (
     api_sweeteners,
     api_brewed_coffees,
     api_brewed_coffees_by_user,
+    api_similar_vectors_by_bean_id
 )
 
 urlpatterns = [
@@ -32,4 +33,5 @@ urlpatterns = [
     path("sweeteners/",api_sweeteners,name="api_sweeteners"),
     path("brewedcoffees/",api_brewed_coffees,name="api_brewed_coffees"),
     path("brewedcoffees/<int:pk>/",api_brewed_coffees_by_user,name="api_brewed_coffees_by_user"),
+    path("vectors/<int:pk>/", api_similar_vectors_by_bean_id, name="get_similar_vectors")
 ]
